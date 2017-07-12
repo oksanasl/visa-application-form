@@ -109,6 +109,10 @@ form{
 li{
     list-style-type: none;
 }
+
+.inpfield{
+    width: inherit;
+}
 .heading{
     font-weight: bold;
 }
