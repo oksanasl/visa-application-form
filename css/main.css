@@ -94,25 +94,32 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
+h1{
+    text-align: center;
+}
 form{
     font-size: 1.2em;
 }
 
-label{
-    
-}
 
 .wrap{
     /*display: flex;*/
 }
 
-
+li{
+    list-style-type: none;
+}
 .heading{
-    background-color: red;
     font-weight: bold;
 }
 
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+.bc1, bc2{
+    margin: 0 20px !important;
+}
 
 
 
