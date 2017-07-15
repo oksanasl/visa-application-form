@@ -85,15 +85,15 @@
                                 <label for="nationality">Nationality</label>
                             </div>
                             <div class="col-md-8">
-                                <select id="nationality" name="nationality">
+                                <select id="nationality" name="country" class="my-new-list">
                                     <option selected="" value="Default">(Please select a country)</option>
-                                    <option value="AS">Ukraine</option>
-                                    <option value="AF">Australia</option>
-                                    <option value="AL">Canada</option>
-                                    <option value="DZ">India</option>
-                                    <option value="AS">Russia</option>
-                                    <option value="AD">United Kingdom</option>
-                                    <option value="AD">USA</option>
+                                    <!--<option value="AS">Ukraine</option>-->
+                                    <!--<option value="AF">Australia</option>-->
+                                    <!--<option value="AL">Canada</option>-->
+                                    <!--<option value="DZ">India</option>-->
+                                    <!--<option value="AS">Russia</option>-->
+                                    <!--<option value="AD">United Kingdom</option>-->
+                                    <!--<option value="AD">USA</option>-->
                                 </select>
                             </div>
                         </div>
@@ -124,12 +124,12 @@
                             </div>
                             <div class="col-md-8">
                                 <ul class="radio">
-                                    <li><input type="radio" name="passportt" value="regular" checked/><span>regular passport</span></li>
-                                    <li><input type="radio" name="passportt" value="diplomatic" /><span>diplomatic passport</span></li>
-                                    <li><input type="radio" name="passportt" value="special" /><span>special passport</span></li>
-                                    <li><input type="radio" name="passportt" value="temporary" /><span>temporary passport</span></li>
-                                    <li><input type="radio" name="passportt" value="other" /><span>other</span></li>
-                                    <li><input type="text" name="passportt" value="" /><span style="display:none;">Required field</span></li>
+                                    <li><input type="radio" name="passport" value="regular" checked/><span>regular passport</span></li>
+                                    <li><input type="radio" name="passport" value="diplomatic" /><span>diplomatic passport</span></li>
+                                    <li><input type="radio" name="passport" value="special" /><span>special passport</span></li>
+                                    <li><input type="radio" name="passport" value="temporary" /><span>temporary passport</span></li>
+                                    <li><input type="radio" id="other-passport" name="passport" value="other" onfocus="linkRadioWithInput()"/><span>other</span></li>
+                                    <li><input type="text" id="other-passport-type" /><span style="display:none;">Required field</span></li>
                                 </ul>
                             </div>
                          </div>
@@ -201,7 +201,8 @@
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/logic.js"></script>
         <script src='js/bootstrap.js'></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
