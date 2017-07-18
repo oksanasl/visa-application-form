@@ -27,14 +27,6 @@
                 <form name='application' onSubmit="return formValidation();">
                     <div>
                         <div class="bg-primary heading col-md-12">Personal information</div>
-                        <div class="form-group col-md-12">
-                            <div class="col-lg-2 col-md-4 col-sm-7 text-left">
-                                <label for="surname">Surname</label>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-8 col-lg-10">
-                                <input type="text" id="surname" name="surname" class="inpfield"/>
-                            </div>
-                        </div>
 
                         <div class="form-group col-md-12 text-left">
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 text-left">
@@ -44,12 +36,22 @@
                                 <input type="text" id="username" name="username" class="inpfield" />
                             </div>
                         </div>
+
+                        <div class="form-group col-md-12">
+                            <div class="col-lg-2 col-md-4 col-sm-7 text-left">
+                                <label for="surname">Surname</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-8 col-lg-10">
+                                <input type="text" id="surname" name="surname" class="inpfield" onblur="insertName()" />
+                            </div>
+                        </div>
+
                         <div class="form-group col-md-12 text-left">
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 text-left">
                                 <label for="dateofbirth">Date of birth</label>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-8 col-lg-10">
-                                <input type="date" id="dateofbirth"  name="dateofbirth" min="1900-01-01" />
+                                <input type="date" id="dateofbirth" class="setmax" name="dateofbirth" min="1900-01-01" max="2017-07-14" onclick="setMaxDate()"/>
                             </div>
                         </div>
 
@@ -87,13 +89,6 @@
                             <div class="col-md-8">
                                 <select id="nationality" name="country" class="my-new-list">
                                     <option selected="" value="Default">(Please select a country)</option>
-                                    <!--<option value="AS">Ukraine</option>-->
-                                    <!--<option value="AF">Australia</option>-->
-                                    <!--<option value="AL">Canada</option>-->
-                                    <!--<option value="DZ">India</option>-->
-                                    <!--<option value="AS">Russia</option>-->
-                                    <!--<option value="AD">United Kingdom</option>-->
-                                    <!--<option value="AD">USA</option>-->
                                 </select>
                             </div>
                         </div>
@@ -147,7 +142,7 @@
                                 <label for="issuedate">Date of issue</label>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-8 col-lg-10">
-                                <input type="text" id="issuedate" name="issuedate" class="inpfield" />
+                                <input type="date" id="issuedate" name="issuedate" class="inpfield setmax" max="2017-07-14" />
                             </div>
                         </div>
                         <div class="form-group col-md-12">
@@ -155,7 +150,7 @@
                                 <label for="expirydate">Date of expiry</label>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-8 col-lg-10">
-                                <input type="text" id="expirydate" name="expirydate" class="inpfield" />
+                                <input type="date" id="expirydate" name="expirydate" class="inpfield" />
                             </div>
                         </div>
                     </div>
@@ -168,7 +163,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-8 col-lg-10">
                                 <ul class="radio">
                                     <li><input type="radio" name="eu" value="eu"  /><span>EU national</span></li>
-                                    <li><input type="radio" name="eu" value="noeu" /><span>Non-EU national</span></li>
+                                    <li><input type="radio" name="eu" value="noneu" /><span>Non-EU national</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -187,7 +182,16 @@
                                 </ul>
                             </div>
                         </div>
-                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <input type="checkbox" name="check" value="n/a" id="declaration-checkbox" onchange="declarationIsChecked()"/>
+                        <span>
+                            I<span id="name-insertion"></span> hereby declare that the details furnished above are true and correct to the best of my knowledge
+                        and belief and I undertake to inform you of any changes therein, immediately. In case any of the above
+                        information is found to be false or untrue or misleading or misrepresenting, I am aware that I may be held liable
+                        for it.
+                        </span>
+                    </div>
                     <div class="buttons col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <input type="submit" class="btn btn-primary bc1" name="submit" value="Submit" />
                         <input type="reset" class="btn btn-danger bc2">
